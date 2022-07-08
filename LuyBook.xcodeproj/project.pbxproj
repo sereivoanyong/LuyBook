@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		2DB668CE28783C2600ACBA80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB668CD28783C2600ACBA80 /* AppDelegate.swift */; };
 		2DB668D028783C2600ACBA80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB668CF28783C2600ACBA80 /* SceneDelegate.swift */; };
-		2DB668D228783C2600ACBA80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB668D128783C2600ACBA80 /* ViewController.swift */; };
-		2DB668D528783C2600ACBA80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DB668D328783C2600ACBA80 /* Main.storyboard */; };
 		2DB668D728783C2700ACBA80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DB668D628783C2700ACBA80 /* Assets.xcassets */; };
 		2DB668DA28783C2700ACBA80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DB668D828783C2700ACBA80 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,8 +17,6 @@
 		2DB668CA28783C2600ACBA80 /* LuyBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuyBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DB668CD28783C2600ACBA80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DB668CF28783C2600ACBA80 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2DB668D128783C2600ACBA80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2DB668D428783C2600ACBA80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2DB668D628783C2700ACBA80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DB668D928783C2700ACBA80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DB668DB28783C2700ACBA80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,13 +54,19 @@
 			children = (
 				2DB668CD28783C2600ACBA80 /* AppDelegate.swift */,
 				2DB668CF28783C2600ACBA80 /* SceneDelegate.swift */,
-				2DB668D128783C2600ACBA80 /* ViewController.swift */,
-				2DB668D328783C2600ACBA80 /* Main.storyboard */,
+				2DB668E128783CB700ACBA80 /* Supporting Files */,
+			);
+			path = LuyBook;
+			sourceTree = "<group>";
+		};
+		2DB668E128783CB700ACBA80 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				2DB668D628783C2700ACBA80 /* Assets.xcassets */,
 				2DB668D828783C2700ACBA80 /* LaunchScreen.storyboard */,
 				2DB668DB28783C2700ACBA80 /* Info.plist */,
 			);
-			path = LuyBook;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +129,6 @@
 			files = (
 				2DB668DA28783C2700ACBA80 /* LaunchScreen.storyboard in Resources */,
 				2DB668D728783C2700ACBA80 /* Assets.xcassets in Resources */,
-				2DB668D528783C2600ACBA80 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +139,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DB668D228783C2600ACBA80 /* ViewController.swift in Sources */,
 				2DB668CE28783C2600ACBA80 /* AppDelegate.swift in Sources */,
 				2DB668D028783C2600ACBA80 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +147,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2DB668D328783C2600ACBA80 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2DB668D428783C2600ACBA80 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2DB668D828783C2700ACBA80 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +208,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +262,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -290,9 +282,9 @@
 				DEVELOPMENT_TEAM = QHQ974WAF6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LuyBook/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Luy Book";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -300,7 +292,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sereivoanyong.LuyBook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sereivoanyong.luybook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -318,9 +310,9 @@
 				DEVELOPMENT_TEAM = QHQ974WAF6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LuyBook/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Luy Book";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -328,7 +320,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sereivoanyong.LuyBook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sereivoanyong.luybook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
