@@ -42,9 +42,10 @@ open class LettersView: UIView {
   public static let lettersDidChangeNotification = Notification.Name("LettersViewLettersDidChangeNotification")
 
   public let textField: TextField = {
-    let textField = TextField(font: .system(size: 40), textAlignment: .center).withAutoLayout
+    let textField = TextField(font: .system(size: 40), textAlignment: .center, textColor: .white).withAutoLayout
     textField.autocorrectionType = .no
     textField.spellCheckingType = .no
+    textField.tintColor = .white
     return textField
   }()
 

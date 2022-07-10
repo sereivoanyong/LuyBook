@@ -26,3 +26,14 @@ final class Account: Object, _Identifiable {
   @Persisted
   var createdAt: Date
 }
+
+extension Account: Listable {
+
+  static var localizedName: String {
+    return "Account".localized
+  }
+
+  static var localizedCollectionName: String {
+    return "Accounts".localized
+  }
+}

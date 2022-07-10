@@ -56,3 +56,80 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     _ = KeyboardManager.shared
   }
 }
+
+private var paletteToolbarKey: Void?
+
+extension UIViewController {
+
+  var paletteToolbar: UIToolbar! {
+    if let paletteToolbar = associatedObject(forKey: &paletteToolbarKey) as Toolbar? {
+      return paletteToolbar
+    }
+    let toolbar = Toolbar(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 44)).withAutoLayout
+    toolbar.overrideBarPosition = .top
+    setAssociatedObject(toolbar, forKey: &paletteToolbarKey)
+    view.addSubview(toolbar)
+
+    NSLayoutConstraint.activate([
+      view.safeAreaLayoutGuide.topAnchor == toolbar.bottomAnchor,
+      toolbar.leadingAnchor == view.leadingAnchor,
+      view.trailingAnchor == toolbar.trailingAnchor
+    ])
+    return toolbar
+  }
+}
+
+extension UISegmentedControl {
+
+  static func makeForTransactionTypes(values: [TransactionType?], selectedValue: TransactionType?, changeHandler: @escaping (TransactionType?) -> Void) -> UISegmentedControl {
+    var actions: [UIAction] = []
+    for transactionType in values {
+      actions.append(UIAction(title: transactionType.map { "\($0)".localized } ?? "All".localized) { _ in
+        changeHandler(transactionType)
+      })
+    }
+    let segmentedControl = UISegmentedControl(frame: .zero, actions: actions).withAutoLayout
+    if let index = values.firstIndex(of: selectedValue) {
+      segmentedControl.selectedSegmentIndex = index
+    }
+    return segmentedControl
+  }
+}
+
+extension UINavigationItem {
+
+  func configureBottomPinningView(_ pinningView: UIView) {
+    let searchController = UISearchController(searchResultsController: nil)
+    self.searchController = searchController
+    hidesSearchBarWhenScrolling = false
+    let searchBar = searchController.searchBar
+    searchBar.perform(Selector(("_setSupportsDynamicType:")), with: false)
+    for subview in searchBar.subviews {
+      subview.alpha = 0
+      subview.isHidden = true
+      subview.removeFromSuperview()
+    }
+    let textField = searchBar.searchTextField
+    textField.adjustsFontForContentSizeCategory = false
+    textField.textColor = .clear
+    textField.placeholder = nil
+    textField.leftView = nil
+    for subview in textField.subviews {
+      subview.alpha = 0
+      subview.isHidden = true
+      subview.removeFromSuperview()
+    }
+    let targetView = textField.superview ?? textField
+    targetView.addSubview(pinningView.withAutoLayout)
+//    pinningView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+//    NSLayoutConstraint.activate((pinningView.anchors == targetView.anchors).all)
+    NSLayoutConstraint.activate([
+      pinningView.topAnchor == targetView.topAnchor + 1,
+      targetView.bottomAnchor == pinningView.bottomAnchor + 16,
+      pinningView.leadingAnchor == targetView.layoutMarginsGuide.leadingAnchor,
+      targetView.layoutMarginsGuide.trailingAnchor == pinningView.trailingAnchor
+    ])
+    textField.removeFromSuperview()
+    print(textField)
+  }
+}

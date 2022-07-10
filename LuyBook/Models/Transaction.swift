@@ -15,6 +15,18 @@ enum TransactionType: String, CaseIterable, PersistableEnum {
   case expense
 }
 
+extension TransactionType: CustomStringConvertible {
+
+  var description: String {
+    switch self {
+    case .income:
+      return "Income"
+    case .expense:
+      return "Expense"
+    }
+  }
+}
+
 final class Transaction: Object, _Identifiable {
 
   @Persisted(primaryKey: true)

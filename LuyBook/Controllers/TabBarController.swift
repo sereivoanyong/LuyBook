@@ -40,9 +40,7 @@ final class TabBarController: UITabBarController {
 
     viewControllers = [
       TransactionsViewController(objects: realm.objects(Transaction.self)),
-//      PotsViewController(user: user, objects: realm.objects(Pot.self)),
-//      BidsViewController(objects: realm.objects(Bid.self)),
-//      ContributionsViewController(objects: realm.objects(Contribution.self)),
+      StatsViewController(),
       MoreViewController(user: user, realm: realm, logOutSuccessHandler: logOutSuccessHandler)
     ].map {
       $0.embeddingInNavigationController(configurationHandler: { navigationController in

@@ -130,6 +130,13 @@ class RealmCollectionCollectionViewController<Object: RealmSwift.ObjectBase & Re
     return objects
   }
 
+  func configureSearchController(placeholder: String) {
+    let searchController = UISearchController(searchResultsController: nil)
+    let searchBar = searchController.searchBar
+    searchBar.placeholder = placeholder
+    navigationItem.searchController = searchController
+  }
+
   func makeAddButton(actionHandler: @escaping (UIAction) -> Void) -> UIButton {
     var configuration = UIButton.Configuration.filled()
     configuration.buttonSize = .large

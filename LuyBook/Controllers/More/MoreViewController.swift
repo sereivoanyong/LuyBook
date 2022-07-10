@@ -45,7 +45,7 @@ final class MoreViewController: ConfigurationsViewController {
       ]),
       .plain(headerText: nil, items: [
         .value(text: "Accounts".localized, secondaryText: nil, accessories: [.disclosureIndicator()]) { [unowned self] _, _ in
-          let viewController = NotificationsViewController()
+          let viewController = AccountsViewController(objects: realm.objects(Account.self))
           self.navigationController?.pushViewController(viewController, animated: true)
         },
         .value(text: "Categories".localized, secondaryText: nil, accessories: [.disclosureIndicator()]) { [unowned self] _, _ in

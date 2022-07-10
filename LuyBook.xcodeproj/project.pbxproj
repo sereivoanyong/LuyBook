@@ -55,6 +55,8 @@
 		2D7AA3AE2879E7D5009AFA48 /* CategoryListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D7AA3AC2879E7D5009AFA48 /* CategoryListView.xib */; };
 		2D7AA3B02879EEB9009AFA48 /* LettersContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7AA3AF2879EEB9009AFA48 /* LettersContentConfiguration.swift */; };
 		2D7AA3B22879F6E6009AFA48 /* ColorContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7AA3B12879F6E6009AFA48 /* ColorContentConfiguration.swift */; };
+		2D7AA3B5287B4820009AFA48 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7AA3B4287B4820009AFA48 /* AccountsViewController.swift */; };
+		2D7AA3B8287B4B4A009AFA48 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7AA3B7287B4B4A009AFA48 /* StatsViewController.swift */; };
 		2D7C358A28794B2A00A9A010 /* ProviderLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7C358928794B2A00A9A010 /* ProviderLoginManager.swift */; };
 		2DB4E25E2878B2E10088A6DD /* RealmSwiftKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2DB4E25D2878B2E10088A6DD /* RealmSwiftKit */; };
 		2DB4E261287946270088A6DD /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB4E25F287946260088A6DD /* LogInViewController.swift */; };
@@ -141,6 +143,8 @@
 		2D7AA3AC2879E7D5009AFA48 /* CategoryListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryListView.xib; sourceTree = "<group>"; };
 		2D7AA3AF2879EEB9009AFA48 /* LettersContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersContentConfiguration.swift; sourceTree = "<group>"; };
 		2D7AA3B12879F6E6009AFA48 /* ColorContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContentConfiguration.swift; sourceTree = "<group>"; };
+		2D7AA3B4287B4820009AFA48 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
+		2D7AA3B7287B4B4A009AFA48 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		2D7C358928794B2A00A9A010 /* ProviderLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderLoginManager.swift; sourceTree = "<group>"; };
 		2DB4E25F287946260088A6DD /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		2DB4E260287946260088A6DD /* LogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
@@ -285,6 +289,22 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		2D7AA3B3287B480C009AFA48 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				2D7AA3B4287B4820009AFA48 /* AccountsViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		2D7AA3B6287B4B3B009AFA48 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				2D7AA3B7287B4B4A009AFA48 /* StatsViewController.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
 		2DB668C128783C2600ACBA80 = {
 			isa = PBXGroup;
 			children = (
@@ -358,14 +378,16 @@
 			isa = PBXGroup;
 			children = (
 				2D7AA34928795F11009AFA48 /* Base */,
+				2D7AA3B6287B4B3B009AFA48 /* Stats */,
+				2D7AA370287967BF009AFA48 /* Transaction */,
+				2D7AA39E28797A0E009AFA48 /* Category */,
+				2D7AA3B3287B480C009AFA48 /* Account */,
+				2D7AA38828796EBC009AFA48 /* More */,
+				2D10675A2878AC4400A6DBE5 /* TabBarController.swift */,
 				2D7AA345287956AC009AFA48 /* OpenRealmViewController.swift */,
 				2D7AA346287956AC009AFA48 /* OpenRealmViewController.xib */,
 				2DB4E25F287946260088A6DD /* LogInViewController.swift */,
 				2DB4E260287946260088A6DD /* LogInViewController.xib */,
-				2D7AA370287967BF009AFA48 /* Transaction */,
-				2D7AA39E28797A0E009AFA48 /* Category */,
-				2D7AA38828796EBC009AFA48 /* More */,
-				2D10675A2878AC4400A6DBE5 /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -511,6 +533,7 @@
 				2DB669172878598D00ACBA80 /* Transaction.swift in Sources */,
 				2D7AA38E28796EC8009AFA48 /* AccountSettingsViewController.swift in Sources */,
 				2D7AA3A428797ED7009AFA48 /* CategoryPlaceholder.swift in Sources */,
+				2D7AA3B5287B4820009AFA48 /* AccountsViewController.swift in Sources */,
 				2D7AA3A028797D09009AFA48 /* ImageLetters.swift in Sources */,
 				2D7AA35428795F18009AFA48 /* FormViewController.swift in Sources */,
 				2D7AA35A28795FD4009AFA48 /* Copying.swift in Sources */,
@@ -519,6 +542,7 @@
 				2D7AA3A228797EC7009AFA48 /* NewCategoryViewController.swift in Sources */,
 				2D7AA3642879606C009AFA48 /* SwiftKit.swift in Sources */,
 				2D7AA37F287968E3009AFA48 /* TitleContentConfiguration.swift in Sources */,
+				2D7AA3B8287B4B4A009AFA48 /* StatsViewController.swift in Sources */,
 				2D10675B2878AC4400A6DBE5 /* TabBarController.swift in Sources */,
 				2D7AA37C287968E3009AFA48 /* ObjectContentConfiguration.swift in Sources */,
 				2D7AA382287968E3009AFA48 /* ListContentView.swift in Sources */,
