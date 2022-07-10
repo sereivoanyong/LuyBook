@@ -1,13 +1,13 @@
 //
-//  MoreViewController.swift
-//  LuyBook
+//  NotificationsViewController.swift
+//  TongTin
 //
-//  Created by Sereivoan Yong on 7/8/22.
+//  Created by Sereivoan Yong on 7/3/22.
 //
 
 import UIKit
 
-class MoreViewController: UIViewController {
+class NotificationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

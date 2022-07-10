@@ -7,20 +7,21 @@
 
 import Foundation
 import RealmSwift
+import RealmSwiftKit
 
-final class Account: Object {
+final class Account: Object, _Identifiable {
 
   @Persisted(primaryKey: true)
   var _id: String = ObjectId.generate().stringValue
 
   @Persisted
-  var _partition: String
+  var _partition: String = app.currentUser!.id
 
   @Persisted
   var name: String
 
   @Persisted
-  var creator: String
+  var creator: User.ID = app.currentUser!.id
 
   @Persisted
   var createdAt: Date

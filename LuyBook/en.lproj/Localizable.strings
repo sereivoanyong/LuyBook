@@ -1,0 +1,54 @@
+"Account Settings" = "Account Settings";
+"Alive" = "Alive";
+"All" = "All";
+"Appearance" = "Appearance";
+"Bid" = "Bid";
+"Bids" = "Bids";
+"Contribution" = "Contribution";
+"Contributions" = "Contributions";
+"Creator" = "Creator";
+"Data & Storage" = "Data & Storage";
+"Disbursement" = "Disbursement";
+"Email" = "Email";
+"Information" = "Information";
+"Invite" = "Invite";
+"Invites" = "Invites";
+"Language" = "Lanuagage";
+"Linked" = "Linked";
+"Linked Accounts" = "Linked Accounts";
+"Members" = "Members";
+"More" = "More";
+"Name" = "Name";
+"New %@";
+"Notifications" = "Notifications";
+"Password" = "Password";
+"Pot" = "Pot";
+"Pots" = "Pots";
+"Preferences" = "Preferences";
+"Price" = "Price";
+"Privacy Policy" = "Privacy Policy";
+"Start Date" = "Start Date";
+"Tontine" = "Tontine";
+"Transaction" = "Transaction";
+"Transactions" = "Transactions";
+
+"Every %@" = "Every %@";
+
+"action.cancel" = "Cancel";
+"action.change_%@" = "Change %@";
+"action.create" = "Create";
+"action.delete_account" = "Delete Account";
+"action.done" = "Done";
+"action.invite" = "Invite";
+"action.join" = "Join";
+"action.link" = "Link";
+"action.log_in" = "Log In";
+"action.log_out" = "Log Out";
+"action.select_%@" = "Select %@";
+
+"tontine.participants" = "Participants";
+"tontine.number_of_participants" = "Number of Participants";
+
+"interface_style.unspecified" = "System";
+"interface_style.light" = "light";
+"interface_style.dark" = "Dark";

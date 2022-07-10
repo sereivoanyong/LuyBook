@@ -49,7 +49,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
   private func configure(_ application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
     Bundle.swizzleForLocalization()
-//    ImageView.clearPickerResults()
+    ImageView.clearPickerResults()
     ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
     GIDSignIn.sharedInstance.restorePreviousSignIn()
     FirebaseApp.configure()

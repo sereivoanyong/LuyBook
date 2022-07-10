@@ -75,3 +75,24 @@ extension Locale {
 
   static let enUS = Locale(identifier: "en_US")
 }
+
+extension UIColor {
+
+  static var systems: [UIColor] {
+    return [
+      .systemRed,
+      .systemGreen,
+      .systemBlue,
+      .systemOrange,
+      .systemYellow,
+      .systemPink,
+      .systemPurple,
+      .systemTeal,
+      .systemIndigo,
+      .systemBrown,
+      .systemMint,
+      .systemCyan,
+      .systemGray
+    ]
+  }
+}

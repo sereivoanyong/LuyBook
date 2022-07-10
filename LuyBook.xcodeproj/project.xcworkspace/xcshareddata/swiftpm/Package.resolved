@@ -199,6 +199,15 @@
       }
     },
     {
+      "identity" : "realmswiftkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sereivoanyong/RealmSwiftKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "93576129d0674ea50b4f625c8baa9a453763972c"
+      }
+    },
+    {
       "identity" : "swift-algorithms",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-algorithms",
@@ -231,7 +240,7 @@
       "location" : "https://github.com/sereivoanyong/SwiftKit",
       "state" : {
         "branch" : "main",
-        "revision" : "9092caf369330427c1c0ab34454269950ad79636"
+        "revision" : "c50c36c19fc2063c20833206a1c15f463cb40abd"
       }
     },
     {

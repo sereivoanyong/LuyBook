@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RealmSwift
+import FacebookCore
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,7 +19,20 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     guard let windowScene = scene as? UIWindowScene else { return }
     window = UIWindow(windowScene: windowScene)
+    window?.overrideUserInterfaceStyle = Preferences.userInterfaceStyle
+    if let user = app.currentUser {
+      handleLogin(user: user, animated: false)
+    } else {
+      presentUnauthorizationViewController()
+    }
     window?.makeKeyAndVisible()
+  }
+
+  func scene(_ scene: UIScene, openURLContexts urlContexts: Set<UIOpenURLContext>) {
+    guard let urlContext = urlContexts.first else {
+      return
+    }
+    ApplicationDelegate.shared.application(.shared, open: urlContext.url, options: [:])
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {
@@ -46,5 +61,38 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // Called as the scene transitions from the foreground to the background.
     // Use this method to save data, release shared resources, and store enough scene-specific state information
     // to restore the scene back to its current state.
+  }
+
+  // MARK: Private
+
+  private func handleLogin(user: User, animated: Bool) {
+    user.refreshCustomData { result in
+      switch result {
+      case .success(let customData):
+        print("User's custom data: \(customData)")
+      case .failure(let error):
+        print("Unable to refresh user custom data: \(error)")
+      }
+    }
+    let configuration = user.configuration(partitionValue: .string(user.id))
+    let openRealm: (Realm) -> Void = { [unowned self] realm in
+      self.window!.setRootViewController(TabBarController(user: user, realm: realm, logOutSuccessHandler: { [unowned self] in
+        self.presentUnauthorizationViewController(animated: true)
+      }), animated: animated, duration: 0.4, options: .transitionCrossDissolve)
+    }
+    if Realm.fileExists(for: configuration) {
+      let realm = try! Realm(configuration: configuration)
+      openRealm(realm)
+    } else {
+      let openViewController = OpenRealmViewController(configuration: configuration, successCompletion: openRealm)
+      window!.setRootViewController(openViewController, animated: animated, duration: 0.4, options: .transitionCrossDissolve)
+    }
+  }
+
+  private func presentUnauthorizationViewController(animated: Bool = false) {
+    let viewController = LogInViewController { [unowned self] user in
+      self.handleLogin(user: user, animated: true)
+    }
+    window!.setRootViewController(viewController, animated: animated, duration: 0.4, options: .transitionCrossDissolve)
   }
 }

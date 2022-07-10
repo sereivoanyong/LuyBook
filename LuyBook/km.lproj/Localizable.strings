@@ -1,0 +1,54 @@
+"Account Settings" = "ការកំណត់គណនី";
+"Alive" = "នៅរស់";
+"All" = "ទាំងអស់";
+"Appearance" = "រូបរាង";
+"Bid" = "ការដេញថ្លៃ";
+"Bids" = "ការដេញថ្លៃ";
+"Contribution" = "ការរួមចំណែក";
+"Contributions" = "ការរួមចំណែក";
+"Creator" = "អ្នកបង្កើត";
+"Data & Storage" = "ទិន្នន័យ & កន្លែងផ្ទុក";
+"Disbursement" = "ការទូរទាត់";
+"Email" = "អ៉ីម៉ែល";
+"Information" = "ព័ត៌មាន";
+"Invite" = "ការអញ្ជើញ";
+"Invites" = "ការអញ្ជើញ";
+"Language" = "ភាសា";
+"Linked" = "បានភ្ជាប់";
+"Linked Accounts" = "គណនីដែលបានភ្ជាប់";
+"Members" = "សមាជិក";
+"More" = "ច្រើនទៀត";
+"Name" = "ឈ្មោះ";
+"New %@" = "%@ថ្មី";
+"Notifications" = "ការជូនដំណឹង";
+"Password" = "ពាក្យសម្ងាត់";
+"Pot" = "ផើង";
+"Pots" = "ផើង";
+"Preferences" = "ចំណូលចិត្ត";
+"Price" = "តម្លៃ";
+"Privacy Policy" = "គោលការណ៍ភាពឯកជន";
+"Start Date" = "ថ្ងៃចាប់ផ្តើម";
+"Tontine" = "តុងទីន";
+"Transaction" = "ប្រតិបត្តិការ";
+"Transactions" = "ប្រតិបត្តិការ";
+
+"Every %@" = "រៀងរាល់%@";
+
+"action.cancel" = "បោះបង់";
+"action.change_%@" = "ប្តូរ%@";
+"action.create" = "បង្កើត";
+"action.delete_account" = "លុបគណនី";
+"action.done" = "រួចរាល់";
+"action.invite" = "អញ្ជើញ";
+"action.join" = "ចូលរួម";
+"action.link" = "ភ្ជាប់";
+"action.log_in" = "ចូល";
+"action.log_out" = "ចេញ";
+"action.select_%@" = "ជ្រើសរើស%@";
+
+"tontine.participants" = "ក្បាល";
+"tontine.number_of_participants" = "ចំនួនក្បាល";
+
+"interface_style.unspecified" = "ប្រព័ន្ធ";
+"interface_style.light" = "ភ្លឺ";
+"interface_style.dark" = "ងងឹត";

@@ -7,20 +7,21 @@
 
 import Foundation
 import RealmSwift
+import RealmSwiftKit
 
-enum TransactionType: String, PersistableEnum {
+enum TransactionType: String, CaseIterable, PersistableEnum {
 
   case income
   case expense
 }
 
-final class Transaction: Object {
+final class Transaction: Object, _Identifiable {
 
   @Persisted(primaryKey: true)
   var _id: String = ObjectId.generate().stringValue
 
   @Persisted
-  var _partition: String
+  var _partition: String = app.currentUser!.id
 
   @Persisted
   var date: Date
@@ -47,8 +48,19 @@ final class Transaction: Object {
   var type: TransactionType
 
   @Persisted
-  var creator: String
+  var creator: User.ID = app.currentUser!.id
 
   @Persisted
   var createdAt: Date
+}
+
+extension Transaction: Listable {
+
+  static var localizedName: String {
+    return "Transaction".localized
+  }
+
+  static var localizedCollectionName: String {
+    return "Transactions".localized
+  }
 }
