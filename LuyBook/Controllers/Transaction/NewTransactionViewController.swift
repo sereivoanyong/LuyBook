@@ -10,6 +10,44 @@ import UIKitSwift
 import SwiftKit
 import RealmSwift
 
+extension UINavigationItem {
+
+  func configureBottomPinningView(_ pinningView: UIView) {
+    let searchController = UISearchController(searchResultsController: nil)
+    self.searchController = searchController
+    hidesSearchBarWhenScrolling = false
+    let searchBar = searchController.searchBar
+    searchBar.perform(Selector(("_setSupportsDynamicType:")), with: false)
+    for subview in searchBar.subviews {
+      subview.alpha = 0
+      subview.isHidden = true
+      subview.removeFromSuperview()
+    }
+    let textField = searchBar.searchTextField
+    textField.adjustsFontForContentSizeCategory = false
+    textField.textColor = .clear
+    textField.placeholder = nil
+    textField.leftView = nil
+    for subview in textField.subviews {
+      subview.alpha = 0
+      subview.isHidden = true
+      subview.removeFromSuperview()
+    }
+    let targetView = textField.superview ?? textField
+    targetView.addSubview(pinningView.withAutoLayout)
+//    pinningView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+//    NSLayoutConstraint.activate((pinningView.anchors == targetView.anchors).all)
+    NSLayoutConstraint.activate([
+      pinningView.topAnchor == targetView.topAnchor + 1,
+      targetView.bottomAnchor == pinningView.bottomAnchor + 16,
+      pinningView.leadingAnchor == targetView.layoutMarginsGuide.leadingAnchor,
+      targetView.layoutMarginsGuide.trailingAnchor == pinningView.trailingAnchor
+    ])
+    textField.removeFromSuperview()
+    print(textField)
+  }
+}
+
 final class NewTransactionViewController: NewObjectViewController<TransactionPlaceholder> {
 
   private var contents: [[IdentifiableContentConfiguration]]!
@@ -38,12 +76,6 @@ final class NewTransactionViewController: NewObjectViewController<TransactionPla
 
   init(realm: Realm) {
     super.init(nibName: nil, bundle: nil)
-//    navigationItem.searchController = UISearchController(searchResultsController: nil).configure {
-//      $0.searchBar.scopeButtonTitles = ["He", "Ho"]
-//    }
-//    let viewClass = NSClassFromString("CKNavigationBarCanvasView") as! UIView.Type
-//    let view = viewClass.init()
-    navigationItem.perform(Selector("px_setBannerView:"), with: UIView().withAutoLayout)
 
     fetchingRealm = realm
     saveHandler = .add(to: realm)
@@ -83,6 +115,46 @@ final class NewTransactionViewController: NewObjectViewController<TransactionPla
 //      segmentedControl.topAnchor == view.safeAreaLayoutGuide.topAnchor,
 //      segmentedControl.centerXAnchor == view.layoutMarginsGuide.centerXAnchor
 //    ])
+
+    let searchController = UISearchController(searchResultsController: nil)
+    navigationItem.searchController = searchController
+    navigationItem.hidesSearchBarWhenScrolling = false
+    let searchBar = searchController.searchBar
+    searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+    let targetView = searchBar.subviews[0]
+    targetView.removeFromSuperview()
+    targetView.translatesAutoresizingMaskIntoConstraints = false
+
+    targetView.addSubview(segmentedControl)
+    NSLayoutConstraint.activate([
+      segmentedControl.topAnchor == targetView.topAnchor + 1,
+      segmentedControl.leadingAnchor == targetView.leadingAnchor,
+      targetView.trailingAnchor == segmentedControl.trailingAnchor,
+      targetView.bottomAnchor == segmentedControl.bottomAnchor + 16,
+    ])
+    let v = UIView()
+    v.frame.origin.y = 40
+    navigationItem.setValue(v, forKey: "_canvasView")
+//    for subview in searchBar.subviews[0].subviews where "\(type(of: subview))".hasSuffix("ContainerView") {
+//      subview.removeFromSuperview()
+//    }
+//    let palette = searchBar.value(forKey: "_containingNavigationPalette") as! UIView?
+
+
+//    let toolbar = Toolbar().withAutoLayout
+//    toolbar.overrideBarPosition = .top
+//    toolbar.scrollEdgeAppearance = UIToolbarAppearance().configure { $0.configureWithTransparentBackground() }
+//    toolbar.compactScrollEdgeAppearance = UIToolbarAppearance().configure { $0.configureWithTransparentBackground() }
+//    toolbar.sizeToFit()
+//    view.addSubview(toolbar)
+//    NSLayoutConstraint.activate([
+//      view.safeAreaLayoutGuide.topAnchor == toolbar.bottomAnchor,
+//      toolbar.leadingAnchor == view.leadingAnchor,
+//      view.trailingAnchor == toolbar.trailingAnchor
+//    ])
+//
+//    additionalSafeAreaInsets.top = toolbar.frame.height
+//    collectionView.contentInset.top = 44
   }
 
   override func viewDidLayoutSubviews() {
