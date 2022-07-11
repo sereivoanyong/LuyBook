@@ -104,7 +104,7 @@ class TransactionsViewController: RealmCollectionCollectionViewController<Transa
       makeNextButtonItem()
     ]
 
-    additionalSafeAreaInsets.top = paletteToolbar.frame.height
+//    additionalSafeAreaInsets.top = paletteToolbar.frame.height
 
     view.addSubview(addButton)
 

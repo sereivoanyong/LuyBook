@@ -395,9 +395,9 @@
 		2DB6691E28785DC000ACBA80 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D7AA373287968D1009AFA48 /* ContentConfigurations */,
 				2D7AA3842879690B009AFA48 /* ImageView.swift */,
 				2D7AA3A528797F75009AFA48 /* LettersView.swift */,
-				2D7AA373287968D1009AFA48 /* ContentConfigurations */,
 				2D7AA3672879612F009AFA48 /* TransactionListView.swift */,
 				2D7AA3692879613C009AFA48 /* TransactionListView.xib */,
 				2D7AA3AB2879E7D5009AFA48 /* CategoryListView.swift */,

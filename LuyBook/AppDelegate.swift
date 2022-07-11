@@ -59,7 +59,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
 private var paletteToolbarKey: Void?
 
-extension UIViewController {
+extension CollectionViewController {
 
   var paletteToolbar: UIToolbar! {
     if let paletteToolbar = associatedObject(forKey: &paletteToolbarKey) as Toolbar? {
@@ -67,14 +67,11 @@ extension UIViewController {
     }
     let toolbar = Toolbar(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 44)).withAutoLayout
     toolbar.overrideBarPosition = .top
+    let appearance = UIToolbarAppearance()
+    appearance.configureWithOpaqueBackground()
+    toolbar.standardAppearance = appearance
     setAssociatedObject(toolbar, forKey: &paletteToolbarKey)
-    view.addSubview(toolbar)
-
-    NSLayoutConstraint.activate([
-      view.safeAreaLayoutGuide.topAnchor == toolbar.bottomAnchor,
-      toolbar.leadingAnchor == view.leadingAnchor,
-      view.trailingAnchor == toolbar.trailingAnchor
-    ])
+    collectionView.setAccessoryView(toolbar, preferredHeight: 44)
     return toolbar
   }
 }

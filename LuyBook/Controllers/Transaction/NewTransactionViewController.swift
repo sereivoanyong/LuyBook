@@ -76,7 +76,6 @@ final class NewTransactionViewController: NewObjectViewController<TransactionPla
       UIBarButtonItem(customView: segmentedControl),
       .flexibleSpace()
     ]
-    additionalSafeAreaInsets.top = paletteToolbar.frame.height
   }
 
   // MARK: Data Source
